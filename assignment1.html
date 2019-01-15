@@ -1,25 +1,92 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="utf-8"> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
-        <title>Example Student's HCDE 439 Physical Computing Page!</title> 
+        <title>Sahana Vishwanath's HCDE 439 Physical Computing Page!</title>
 
         <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
 
-    </head> 
-    <body> 
+    </head>
+    <body>
 
         <div class="header">
-            <h1>Example Student's Assignment 1!</h1>
+            <h1>Sahana's Assignment 1!</h1>
             <p>
             <img src="red-panda.jpg" width=400></a>
             </p>
             <p>
             Here is all the documentation for assignment 1!
             </p>
+
+            <p>
+              The following picture shows the schematic for this assignment:
+              <img src="red-panda.jpg" width=400></a>
+              <p>
+                caption
+              </p>
+            </p>
+
+            <p>
+              The following picture shows the circuit for this assignment:
+              <img src="assignment1-circuit.jpg" width=400></a>
+              <p>
+                caption
+              </p>
+            </p>
+
+            <p>
+              The following code shows the firmware for this assignment:
+              <code>
+                void setup() {
+                  // initialize LED red light to output 8.
+                  pinMode(8, OUTPUT);
+                  // initialize LED green light to output 9.
+                  pinMode(9, OUTPUT);
+                  // initialize LED yellow light to output 10.
+                  pinMode(10, OUTPUT);
+                }
+
+                // the loop function runs over and over again forever
+                void loop() {
+                  // turn the LED red light on
+                  digitalWrite(8, HIGH);
+                  // turn the LED green light on
+                  digitalWrite(9, HIGH);
+                  // turn the LED yellow light on
+                  digitalWrite(10, HIGH);
+                  // wait for half a second
+                  delay(500);
+
+                  // turn the LED red light off
+                  digitalWrite(8, LOW);
+                  // wait for a quarter of a second
+                  delay(200);
+                  // turn the LED green light off
+                  digitalWrite(9, LOW);
+                  // wait for a quarter of a second
+                  delay(200);
+                  // turn the LED yellow light off
+                  digitalWrite(10, LOW);
+                  // wait for half a second
+                  delay(500);
+                }
+              </code>
+              <p>
+                caption
+              </p>
+            </p>
+
+            <p>
+              The following gif shows the operation of the circuit for this assignment:
+              <img src="red-panda.jpg" width=400></a>
+              <p>
+                caption
+              </p>
+            </p>
+
         </div>
-        
+
     </body>
 </html>
