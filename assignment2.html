@@ -20,9 +20,16 @@
             <p>
               <strong> The following picture shows the schematic for this assignment: </strong>
               <br />
-              <img src="a1/a1-schematic.jpeg" width="550"></a>
+              <img src="a2/a2-schematic.jpeg" width="300"></a>
               <p>
-                <em> caption </em>
+                <em> This schematic uses one pushbutton, two LED lights, and three resistors. To determine
+                     which resistors to use for the LED lights, I used Ohm's law. Each of the LED lights
+                     have 1.8 V drop, and the LEDs run at 20 mA, or 0.02 A. Since the power source was 5 V, I first
+                     subtracted 1.8 from 5, to get 3.2 V. I then used Ohm's law (V = I x R), and substituted the
+                     appropriate values to get the formula 3.2 V = 0.02 A x R. Then solving for R, I divided 3.2/0.02
+                     to get 160 ohms. I then chose the closest resistor that was above 160 ohms, which was the 220
+                     ohm resistors. For the pushbutton, I used a 10k ohm resistor, so that the power was not directly
+                     connected to ground. </em>
               </p>
             </p>
             <br />
@@ -32,7 +39,7 @@
               <br />
               <img src="a2/a2-circuit.jpeg" width="300" height="400"></a>
               <p>
-                <em> caption </em>
+                <em> This circuit follows the schematic described above. </em>
               </p>
             </p>
             <br />
@@ -59,32 +66,32 @@
                 <br />
                 // the loop function runs over and over again forever <br />
                 void loop() { <br />
-                  // reads the state of the pushbutton value <br />
-                  buttonState = digitalRead(buttonPin); <br />
+                  &emsp; // reads the state of the pushbutton value <br />
+                  &emsp; buttonState = digitalRead(buttonPin); <br />
                   <br />
-                  // checks if the pushbutton is pressed, and if it is, the following code runs <br />
-                  if (buttonState == HIGH) { <br />
-                    &emsp; // starts a for loop to loop through the two pins (10, 11) <br />
-                    &emsp; for (int thisPin = 10; thisPin < 12; thisPin++) { <br />
+                  &emsp; // checks if the pushbutton is pressed, and if it is, the following code runs <br />
+                  &emsp; if (buttonState == HIGH) { <br />
+                    &emsp; &emsp; // starts a for loop to loop through the two pins (10, 11) <br />
+                    &emsp; &emsp; for (int thisPin = 10; thisPin < 12; thisPin++) { <br />
                       <br />
-                      &emsp; &emsp; // starts a for loop to loop through the brightness level for the LED lights <br />
-                      &emsp; &emsp; for (int brightness = 0; brightness < 256; brightness = brightness + fadeAmount){ <br />
-                        &emsp; &emsp; &emsp;// sets the brightness of the current pin to the brightness variable <br />
-                        &emsp; &emsp; &emsp;analogWrite(thisPin, brightness); <br />
-                        &emsp; &emsp; &emsp; // increases the brightness variable by the fadeAmount (5) <br />
-                        &emsp; &emsp; &emsp; brightness = brightness + fadeAmount; <br />
-                        &emsp; &emsp; &emsp; // waits for 1/20 of a second <br />
-                        &emsp; &emsp; &emsp; delay(50); <br />
-                      &emsp; &emsp;} <br />
-                    } <br />
-                  } <br />
+                      &emsp; &emsp; &emsp; // starts a for loop to loop through the brightness level for the LED lights <br />
+                      &emsp; &emsp; &emsp; for (int brightness = 0; brightness < 256; brightness = brightness + fadeAmount){ <br />
+                        &emsp; &emsp; &emsp; &emsp; // sets the brightness of the current pin to the brightness variable <br />
+                        &emsp; &emsp; &emsp; &emsp; analogWrite(thisPin, brightness); <br />
+                        &emsp; &emsp; &emsp; &emsp; // increases the brightness variable by the fadeAmount (5) <br />
+                        &emsp; &emsp; &emsp; &emsp; brightness = brightness + fadeAmount; <br />
+                        &emsp; &emsp; &emsp; &emsp; // waits for 1/20 of a second <br />
+                        &emsp; &emsp; &emsp; &emsp; delay(50); <br />
+                      &emsp; &emsp; &emsp; } <br />
+                    &emsp; &emsp; } <br />
+                  &emsp; } <br />
                   <br />
-                  // if the button is not pressed the following code runs <br />
-                  else { <br />
-                    // turns both the LED lights off <br />
-                    digitalWrite(10, LOW); <br />
-                    digitalWrite(11, LOW); <br />
-                  } <br />
+                  &emsp; // if the button is not pressed the following code runs <br />
+                  &emsp; else { <br />
+                    &emsp; &emsp; // turns both the LED lights off <br />
+                    &emsp; &emsp; digitalWrite(10, LOW); <br />
+                    &emsp; &emsp; digitalWrite(11, LOW); <br />
+                  &emsp; } <br />
                 } <br />
               </code>
               <p>
