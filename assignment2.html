@@ -64,18 +64,18 @@
                   <br />
                   // checks if the pushbutton is pressed, and if it is, the following code runs <br />
                   if (buttonState == HIGH) { <br />
-                    // starts a for loop to loop through the two pins (10, 11) <br />
-                    for (int thisPin = 10; thisPin < 12; thisPin++) { <br />
+                    &emsp; // starts a for loop to loop through the two pins (10, 11) <br />
+                    &emsp; for (int thisPin = 10; thisPin < 12; thisPin++) { <br />
                       <br />
-                      // starts a for loop to loop through the brightness level for the LED lights <br />
-                      for (int brightness = 0; brightness < 256; brightness = brightness + fadeAmount){ <br />
-                        // sets the brightness of the current pin to the brightness variable <br />
-                        analogWrite(thisPin, brightness); <br />
-                        // increases the brightness variable by the fadeAmount (5) <br />
-                        brightness = brightness + fadeAmount; <br />
-                        // waits for 1/20 of a second <br />
-                        delay(50); <br />
-                      } <br />
+                      &emsp; &emsp; // starts a for loop to loop through the brightness level for the LED lights <br />
+                      &emsp; &emsp; for (int brightness = 0; brightness < 256; brightness = brightness + fadeAmount){ <br />
+                        &emsp; &emsp; &emsp;// sets the brightness of the current pin to the brightness variable <br />
+                        &emsp; &emsp; &emsp;analogWrite(thisPin, brightness); <br />
+                        &emsp; &emsp; &emsp; // increases the brightness variable by the fadeAmount (5) <br />
+                        &emsp; &emsp; &emsp; brightness = brightness + fadeAmount; <br />
+                        &emsp; &emsp; &emsp; // waits for 1/20 of a second <br />
+                        &emsp; &emsp; &emsp; delay(50); <br />
+                      &emsp; &emsp;} <br />
                     } <br />
                   } <br />
                   <br />
