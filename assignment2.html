@@ -12,7 +12,7 @@
     <body>
 
         <div class="header">
-            <h1>Assignment 2: Fade! </h1>
+            <h1>Assignment 2: Lights that Fade! </h1>
             <h2> Sahana Vishwanath </h2>
             <h3> This page shows all the documentation for assignment 2. </h3>
             <br />
@@ -41,10 +41,56 @@
               <strong> The following code shows the firmware for this assignment: </strong>
               <br />
               <code>
-
+                // sets the number of the pushbutton pin <br />
+                const int buttonPin = 2; <br />
+                // sets how many points to fade the LED by <br />
+                int fadeAmount = 5; <br />
+                // sets variable for reading the pushbutton status <br />
+                int buttonState = 0; <br />
+                <br />
+                void setup() { <br />
+                  // initializes the 10 pin as an output for the green LED light <br />
+                  pinMode(10, OUTPUT); <br />
+                  // initializes the 11 pin as an output for the red LED light <br />
+                  pinMode(11, OUTPUT); <br />
+                  // initializes the pushbutton pin as an input <br />
+                  pinMode(buttonPin, INPUT); <br />
+                } <br />
+                <br />
+                // the loop function runs over and over again forever <br />
+                void loop() { <br />
+                  // reads the state of the pushbutton value <br />
+                  buttonState = digitalRead(buttonPin); <br />
+                  <br />
+                  // checks if the pushbutton is pressed, and if it is, the following code runs <br />
+                  if (buttonState == HIGH) { <br />
+                    // starts a for loop to loop through the two pins (10, 11) <br />
+                    for (int thisPin = 10; thisPin < 12; thisPin++) { <br />
+                      <br />
+                      // starts a for loop to loop through the brightness level for the LED lights <br />
+                      for (int brightness = 0; brightness < 256; brightness = brightness + fadeAmount){ <br />
+                        // sets the brightness of the current pin to the brightness variable <br />
+                        analogWrite(thisPin, brightness); <br />
+                        // increases the brightness variable by the fadeAmount (5) <br />
+                        brightness = brightness + fadeAmount; <br />
+                        // waits for 1/20 of a second <br />
+                        delay(50); <br />
+                      } <br />
+                    } <br />
+                  } <br />
+                  <br />
+                  // if the button is not pressed the following code runs <br />
+                  else { <br />
+                    // turns both the LED lights off <br />
+                    digitalWrite(10, LOW); <br />
+                    digitalWrite(11, LOW); <br />
+                  } <br />
+                } <br />
               </code>
               <p>
-                <em> caption </em>
+                <em> The comments in the above code describe each line of in the above code in detail. The
+                     code initializes various variables as well as sets certain output and input pins. The code
+                     then runs through two for loops to display two fading lights. </em>
               </p>
             </p>
             <br />
@@ -54,7 +100,8 @@
             <br />
               <img src="a2/a2-animation.gif" width="300" height="400"></a>
               <p>
-                <em> caption </em>
+                <em> The gif above shows how the circuit operates. Once the button is pressed, the green light
+                     turns on and slowly fades until it is off, then the red light turns on and slowly fades off. </em>
               </p>
             </p>
         </div>
