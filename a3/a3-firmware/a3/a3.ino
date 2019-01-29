@@ -21,10 +21,10 @@ void loop() {
   // read the analog in value
   sensorValue = analogRead(analogInPin);
   // map it to the range of the analog out
-  outputValue = map(sensorValue, 100, 600, 0, 255);
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
   
   // turn the blue LED light off if the sensor Value is lower than 100 
-  if (sensorValue < 100) {
+  if (sensorValue < 800) {
     // turns off blue LED light off
     analogWrite(ledPin, 0); 
 
