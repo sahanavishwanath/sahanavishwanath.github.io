@@ -21,7 +21,19 @@ void loop() {
   // read the analog in value
   sensorValue = analogRead(analogInPin);
   // map it to the range of the analog out
-  outputValue = map(sensorValue, 100, 600, 124, 255);
-  // set the brightness of the LED as outputValue
-  analogWrite(ledPin, outputValue);
+  outputValue = map(sensorValue, 100, 600, 0, 255);
+
+  // turn the LED strip light off if the sensorValue is lower than 800
+  if (sensorValue < 800) {
+    // turns LED strip light off
+    analogWrite(ledPin, outputValue);
+  }
+  // turns LED strip light on if the sensor greater than 800
+  else {
+    // set LED light strip brightness to level of outputValue
+    analogWrite(ledPin, 0);
+  }
+
+  // wait 2 milliseconds before the next loop
+  delay(2);
 }
