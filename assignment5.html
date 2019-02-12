@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Sahana Vishwanath's HCDE 439 Physical Computing Page!</title>
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+
+        <div class="header">
+            <h1>Assignment 5: Motors! </h1>
+            <h2> Sahana Vishwanath </h2>
+            <h3> This page shows all the documentation for assignment 5. </h3>
+            <br />
+
+            <p>
+              <strong> The following picture shows the schematic for this assignment: </strong>
+              <br />
+              <img src="a5/a5-schematic.jpeg" width="550"></a>
+              <p>
+                <em> This schematic uses one motor, a joystick, and a flyback diode. </em>
+              </p>
+            </p>
+            <br />
+            <br />
+            <p>
+              <strong> The following picture shows the circuit for this assignment: </strong>
+              <br />
+              <img src="a5/a5-circuit.jpeg" width="400" height="300"></a>
+
+            </p>
+            <br />
+            <br />
+            <p>
+              <strong> The following code shows the firmware for this assignment: </strong>
+              <br />
+              <pre> <code>
+// analog input pin that reads y value
+int yPin = A0;
+// value read by the motor
+int yValue = 0;
+// value output to the motor
+int outputValue = 0;
+// output pin that motor is connected to
+int motorPin = 10;
+
+void setup() {
+  // set motorPin 10 as an output
+  pinMode(motorPin, OUTPUT);
+  // initialize serial communications at 9600 bps
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the analog in value
+  yValue = analogRead(yPin);
+  // prints 'The y value is ' to the serial monitor
+  Serial.print("The y value is  ");
+  // prints the y value to the serial monitor
+  Serial.println(yValue);
+  // map the yValue to the range of the analog out
+  outputValue = map(yValue, 0, 1023, 100, 255);
+  // set motor speed to the motorValue
+  analogWrite(motor, motorVal);
+
+  // wait 30 milliseconds before the next loop starts
+  delay(15);
+}
+
+              </code> </pre>
+              <p>
+                <em> The comments in the above code describe each line of in the above code in detail. The
+                     code initializes various variables as well as sets certain output and input pins. The code
+                     then runs through a loop that changes the speed of the motor depending on a specific value. </em>
+              </p>
+            </p>
+            <br />
+            <br />
+            <p>
+              <strong> The following gif shows the operation of the circuit for this assignment: </strong>
+            <br />
+              <img src="a5/a5-animation.gif" width="300" height="400"></a>
+              <p>
+                <em> The gif above shows how the circuit operates. When I push the joystick upwards, the
+                     motor stops spinning. When the joystick is at the neutral middle position, the motor
+                     spins slowly, and when it is pushed down, the motor spins fast. </em>
+              </p>
+            </p>
+        </div>
+
+    </body>
+</html>
