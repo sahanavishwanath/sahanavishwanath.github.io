@@ -2,11 +2,11 @@
 html, body {
   padding: 0 0 0 0;
   margin: 0;
-  font-family: 'helvetica', 'arial', 'sans';
+  font-family: 'avenir', 'arial', 'sans';
 }
 
 h1,h2,h3,h4 {
-  font-family: 'helvetica', 'arial', 'sans';
+  font-family: 'avenir', 'arial', 'sans';
   }
 
 
@@ -66,4 +66,3 @@ a {
   color: #FFF;
   text-decoration: none;
 }
-

@@ -65,7 +65,7 @@ void fadeOnce(int fadeAmount) {
 
 // the loop routine runs over and over again forever
 void loop() {
-  // reads the states of pushbuttons 1 & 2 values
+  // reads the states of pushbuttons 1 and 2 values
   button1State = digitalRead(button1Pin);
   button2State = digitalRead(button2Pin);
 
